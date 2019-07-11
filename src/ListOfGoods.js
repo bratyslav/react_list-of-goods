@@ -6,4 +6,5 @@ const ListOfGoods = ({goods}) => (
   </ul>
 );
 
+
 export default ListOfGoods;
