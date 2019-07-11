@@ -1,4 +1,5 @@
 import React from 'react';
+import ListOfGoods from './ListOfGoods';
 
 const goodsFromServer = [
   'Dumplings',
@@ -13,10 +14,27 @@ const goodsFromServer = [
   'Garlic',
 ];
 
-const App = () => (
-  <div className="App">
-    <h1>Goods 1</h1>
-  </div>
-);
+class App extends React.Component {
+  state = {
+    loaded: false
+  };
+
+  loadList = () => {
+    this.setState({ loaded: true });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        {
+          this.state.loaded
+            ? <ListOfGoods goods={goodsFromServer} />
+            : <button onClick={this.loadList}>Load</button> 
+        }
+      </div>
+    );
+  };
+
+};
 
 export default App;
