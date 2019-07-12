@@ -29,7 +29,7 @@ class App extends React.Component {
   };
 
   reverseData = () => {
-    this.setState({ goods: [...goodsFromServer].reverse() });
+    this.setState({ goods: this.state.goods.reverse() });
   };
 
   sortAlphabetically = () => {
